@@ -1,7 +1,10 @@
 package br.com.alura.screenmatch.models;
 
-public record DadosSerie(@JsonAlias String titulo,
-                         String avaliacao,
-                         String dataDeLancamento,
-                         int totalDeTemporadas) {
+
+import org.codehaus.jackson.annotate.JsonProperty;
+
+public record DadosSerie(@JsonProperty String titulo,
+                         @JsonProperty String avaliacao,
+                         @JsonProperty String dataDeLancamento,
+                         @JsonProperty int totalDeTemporadas) {
 }

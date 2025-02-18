@@ -1,10 +1,11 @@
 package br.com.alura.screenmatch.models;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import org.codehaus.jackson.annotate.JsonProperty;
-
-public record DadosSerie(@JsonProperty String titulo,
-                         @JsonProperty String avaliacao,
-                         @JsonProperty String dataDeLancamento,
-                         @JsonProperty int totalDeTemporadas) {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record DadosSerie(@JsonAlias("Title") String titulo,
+                         @JsonAlias("imdbRating") String avaliacao,
+                         @JsonAlias("Released") String dataDeLancamento,
+                         @JsonAlias("totalSeasons") int totalDeTemporadas) {
 }
